@@ -12,7 +12,7 @@ router.get("/", async (req, res) => {
       [API_CURRENCY_NAME]: API_CURRENCY_VALUE,
       
     });
-    const apiResponse = await needle("get", `${API_MARKET_URL}?${params}`);
+    const apiResponse = await needle("get", `${API_MARKET_URL}?${params}&per_page=10&page=${req.query.page}`);
     const data = apiResponse.body;
 
     res.status(200).json(data);
