@@ -7,6 +7,8 @@ const PORT = process.env.PORT || 5000;
 const app = express();
 
 app.use('/api', require('./routes/coinRoutes'));
+ app.use(`/api`, require("./routes/singleCoinRoutes"));
+
 
 app.use(cors());
 
